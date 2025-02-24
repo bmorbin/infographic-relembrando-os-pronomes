@@ -392,9 +392,9 @@
         transform: translate(-50%) !important;
         background-color: transparent;
         max-width: min(calc(90vw), 750px);
-        overflow-y: scroll;
+        overflow-y: scroll !important;
         padding-top: 5px !important;
-        max-height: 100vh;
+        max-height: max(100vh, fit-content);
         min-height: fit-content;
         height: fit-content;
         transition: opacity .5s ease-in-out, visibility .5s .5s;  /* Smooth fade effect */
