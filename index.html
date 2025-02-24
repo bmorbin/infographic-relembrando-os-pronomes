@@ -9,15 +9,52 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- http://michalsnik.github.io/aos/ -->
 </head>
-<body>
-    <!-- <div class="background-elements">
-        <div id="wave-bottom"></div>
-        <div style="background-color: red; width:100%">bruno</div>
-        <div style="background-color: green; width:100%">bruno</div>
-        <div style="background-color: yellow; width:100%">bruno</div>
-    </div> -->
+<body style="position: relative;">
+    
+    <div id="back-top">
+        <div style="max-height: 100%; width: min(calc(100vw - 10px), 1000px);">
+            <div style="position: relative; background-color: rgba(255, 0, 0, 0); width: 100%; height: 100%;display: flex; flex-direction: row; align-items: flex-start;">
+                <div style="width: 50%; background-color: rgba(255, 0, 0, 0);display: flex;">
+                    <img src="images/quina-top.png" style="max-width: min(150px, 15vw); margin-left: min(20px,5vw); margin-top: 20px; mix-blend-mode: soft-light;">
+                </div>
+                <div style="width: 50%; display:flex; justify-content:end;background-color: rgba(0, 128, 0, 0);">
+                    <img src="images/pontos quadrado.png" style="max-width: min(150px, 15vw); margin-right: min(20px,5vw); margin-top: 20px; mix-blend-mode: soft-light">
+                    <img src="images/circle-cut-vertical-top.png" style="max-width: min(200px, 20vw); margin-right: min(80px,10vw); margin-top: 0px; position: absolute;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="back-middle">
+        <div style="max-height: 100%; width: min(calc(100vw - 10px), 1000px); ">
+            <div style="position: relative; background-color: rgba(255, 0, 0, 0); width: 100%; height: 100%;display: flex; flex-direction: row; align-items: flex-start;">
+                <div style="width: 50%; background-color: rgba(255, 0, 0, 0);display: flex; flex-direction: column;">
+                    <img src="images/litle-wave.png" style="max-width: min(175px, 27vw); transform: translateX(-25%)">
+                    <img src="images/full-circle.png" style="max-width: min(200px, 30vw); margin-left: min(40px,5vw); transform: translateY(-50%);">
+                </div>
+                <div style="width: 50%; display:flex; justify-content:end;background-color: rgba(0, 128, 0, 0);display: flex; flex-direction: column;align-items: flex-end;">
+                    <img src="images/full-circle.png" style="max-width: min(200px, 30vw); transform: translateX(50%) translateY(-25%);">
+                    <img src="images/litle-wave.png" style="max-width: min(175px, 27vw); transform: translateY(-75%)">
+                    
 
-    <div class="elements-container">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="back-bottom">
+        <div style="max-height: 100%; width: min(calc(100vw - 10px), 1000px);">
+            <div style="position: relative; background-color: rgba(255, 0, 0, 0); width: 100%; height: 100%;display: flex; flex-direction: row; align-items: flex-end;">
+                <div style="width: 50%; background-color: rgba(255, 0, 0, 0);display: flex;">
+                    <img src="images/circle-cut-vertical-bottom.png" style="margin-left: min(30px,10vw);max-width: min(50vw, 400px); max-height: 35vh;">
+                </div>
+                <div style="width: 50%; display:flex; justify-content:end;background-color: rgba(0, 128, 0, 0);">
+                    <img src="images/quina-bottom.png" style="max-width: min(150px, 15vw); margin-right: min(20px,5vw); margin-bottom: 25px; mix-blend-mode: soft-light;">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="elements-container" id="elements-container">
         <div class="foreground-elements">
             <div id="title-element">
                 <img src="images/title-site.png" 
@@ -28,35 +65,80 @@
                 style="max-height: var(--card-height);">
             </div>
             <div id="second-card-container">
-                <!-- <div id="panel-board">A</div> -->
                 <div id='panel-board' style="position: relative;background-image: url('images/panel-board.png'); background-size: 100% 100%; width: min(calc(100vw - 20px), 800px);display: flex; flex-wrap: wrap;align-items: center; justify-content: center;">
                     <div style="flex: 1 1 50%; padding: var(--padding-panel-major) var(--padding-panel-minor) var(--padding-panel-minor) var(--padding-panel-minor); display: flex; align-items: end;justify-content: end;">
-                        <img src="images/Azul Pronomes pessoais.png" style="max-height: var(--card-height);">
+                        <a data-bs-toggle="offcanvas" href="#offcanvasPronomesPessoais" role="button" aria-controls="offcanvasPronomesPessoais">
+                            <img src="images/Azul Pronomes pessoais.png" style="max-height: var(--card-height);">
+                        </a>
                     </div>
                     <div style="flex: 1 1 50%; padding: var(--padding-panel-major) var(--padding-panel-minor) var(--padding-panel-minor) var(--padding-panel-minor); display: flex; align-items: end;justify-content: baseline;">
-                        <img src="images/Amarelo Pronomes possessivos.png" style="max-height: var(--card-height);">
+                        <a data-bs-toggle="offcanvas" href="#offcanvasPronomesPossessivos" role="button" aria-controls="offcanvasPronomesPossessivos">
+                            <img src="images/Amarelo Pronomes possessivos.png" style="max-height: var(--card-height);">
+                        </a>
                     </div>
                     <div style="flex: 1 1 50%; padding: var(--padding-panel-minor) var(--padding-panel-minor) var(--padding-panel-major) var(--padding-panel-minor); display: flex; align-items: baseline;justify-content: end;">
-                        <img src="images/Verde Pronomes demonstrativos.png" style="max-height: var(--card-height);">
+                        <a data-bs-toggle="offcanvas" href="#offcanvasPronomesDemonstrativos" role="button" aria-controls="offcanvasPronomesDemonstrativos">
+                            <img src="images/Verde Pronomes demonstrativos.png" style="max-height: var(--card-height);">
+                        </a>
                     </div>
                     <div style="flex: 1 1 50%; padding: var(--padding-panel-minor) var(--padding-panel-minor) var(--padding-panel-major) var(--padding-panel-minor); display: flex; align-items: baseline;justify-content: baseline;">
-                        <img src="images/Rosa Pronomes indefinidos.png" style="max-height: var(--card-height);">
+                        <a data-bs-toggle="offcanvas" href="#offcanvasPronomesIndefinidos" role="button" aria-controls="offcanvasPronomesIndefinidos">
+                            <img src="images/Rosa Pronomes indefinidos.png" style="max-height: var(--card-height);">
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="background-elements">
-            <div id="back-top">A</div>
-            <div id="back-middle">B</div>
-            <div id="back-bottom">Ca</div>
-        </div>
     </div>
 
-    <!-- <div class="foreground-elements">
-        <h1>Texto à Frente</h1>
-        <p>Esses elementos ficam acima da textura de fundo com o efeito de blend mode.</p>
-        <p>Lorem*20</p>
-    </div> -->
+    <div class="offcanvas container-card" tabindex="-1" id="offcanvasPronomesPessoais">
+        <div style="width: 100%; position: fixed;   display: flex;   justify-content: end;   padding: min(5vw,50px);">
+            <div class="close-container" data-bs-dismiss="offcanvas" aria-label="Close">
+                <div class="leftright"></div>
+                <div class="rightleft"></div>
+                <label class="close">voltar</label>
+            </div>
+        </div>
+        <img class="card-wide" src="images/POSTits Azul.png">
+        <img class="card-long" src="images/POSTits Azul.png">
+    </div>
+
+    <div class="offcanvas container-card" tabindex="-1" id="offcanvasPronomesPossessivos">
+        <div style="width: 100%; position: fixed;   display: flex;   justify-content: end;   padding: min(5vw,50px);">
+            <div class="close-container" data-bs-dismiss="offcanvas" aria-label="Close">
+                <div class="leftright"></div>
+                <div class="rightleft"></div>
+                <label class="close">voltar</label>
+            </div>
+        </div>
+        <img class="card-wide" src="images/POSTits Amarelo.png">
+        <img class="card-long" src="images/POSTits Amarelo.png">
+    </div>
+
+    <div class="offcanvas container-card" tabindex="-1" id="offcanvasPronomesDemonstrativos">
+        <div style="width: 100%; position: fixed;   display: flex;   justify-content: end;   padding: min(5vw,50px);">
+            <div class="close-container" data-bs-dismiss="offcanvas" aria-label="Close">
+                <div class="leftright"></div>
+                <div class="rightleft"></div>
+                <label class="close">voltar</label>
+            </div>
+        </div>
+        <img class="card-wide" src="images/POSTits Verde.png">
+        <img class="card-long" src="images/POSTits Verde.png">
+    </div>
+
+    <div class="offcanvas container-card" tabindex="-1" id="offcanvasPronomesIndefinidos">
+        <div style="width: 100%; position: fixed;   display: flex;   justify-content: end;   padding: min(5vw,50px);">
+            <div class="close-container" data-bs-dismiss="offcanvas" aria-label="Close">
+                <div class="leftright"></div>
+                <div class="rightleft"></div>
+                <label class="close">voltar</label>
+            </div>
+        </div>
+        <img class="card-wide" src="images/POSTits Rosa.png">
+        <img class="card-long" src="images/POSTits Rosa.png">
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
@@ -66,12 +148,67 @@
     :root {
         --title-height: 100px;
         --minus-title: 50px;
-        --margin-top-title: 35px;
-        --margin-top-first-card: 55px;
-        --margin-top-second-card: 60px;
+        --margin-top-title: 75px;
+        --margin-top-first-card: 85px;
+        --margin-top-second-card: 85px;
         --card-height: 150px;
         --padding-panel-minor: 25px;
         --padding-panel-major: 85px;
+    }
+
+    #back-top{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background-color: rgba(255, 0, 0, 0);
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+    }
+
+    #back-middle{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) !important;
+        width: 100%;
+        background-color: rgba(0, 0, 255, 0);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+        overflow-y: visible;
+        /* background-color: red; */
+        min-height: 100%;
+    }
+
+    #back-bottom{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-image: url('images/bottom-wave.png');
+        background-size: auto min(100%, 45vh);
+        background-position: bottom;
+        background-repeat: repeat-x;
+        height: 45vh;
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+        justify-content: center;
+    }
+
+    .elements-container {
+        transition: opacity .5s ease-in-out, visibility 0.25s 0.25s;  /* Smooth fade effect */
+        visibility: hidden; /* Initially hidden */
+        opacity: 0;         /* Initially transparent */
+    }
+
+    .elements-container.visible {
+        visibility: visible;
+        opacity: 1; /* Fully visible */
     }
 
     #title-element{
@@ -121,9 +258,9 @@
             --title-height: 80px;
             --minus-title: 60px;
             --card-height: 120px;
-            --margin-top-title: 35px;
-            --margin-top-first-card: 35px;
-            --margin-top-second-card: 40px;
+            --margin-top-title: 60px;
+            --margin-top-first-card: 65px;
+            --margin-top-second-card: 70px;
         }    
 
         .foreground-elements{
@@ -136,9 +273,9 @@
             --title-height: 50px;
             --minus-title: 70px;
             --card-height: 90px;
-            --margin-top-title: 25px;
-            --margin-top-first-card: 35px;
-            --margin-top-second-card: 40px;
+            --margin-top-title: 50px;
+            --margin-top-first-card: 55px;
+            --margin-top-second-card: 60px;
         }    
 
         .foreground-elements{
@@ -165,47 +302,31 @@
 
     .close-container{
         position: relative;
-        width: 35px;
-        height: 35px;
+        width: 25px;
+        height: 25px;
         cursor: pointer;
+        background-color: rgba(255, 0, 0, 0);
+        background-image: url('images/X.png');
+        background-size: 100% 100%;
+        background-position: center;
     }
 
     .close-container:hover{
-        background-color: rgba(46, 46, 46, 0.123);
-    }
-
-    .leftright{
-        height: 4px;
-        width: 35px;
-        position: absolute;
-        margin-top: 15px;
-        background-color: whitesmoke;
-        border-radius: 2px;
-        transform: rotate(45deg);
-        transition: all .25s ease-in;
-    }
-
-    .rightleft{
-        height: 4px;
-        width: 35px;
-        position: absolute;
-        margin-top: 15px;
-        background-color: whitesmoke;
-        border-radius: 2px;
-        transform: rotate(-45deg);
-        transition: all .25s ease-in;
+        /* background-color: rgba(46, 46, 46, 0.123); */
+        filter: opacity(0.7);
     }
 
     label{
-        color: whitesmoke;
+        color: rgb(13, 16, 61);
         font-size: .3em;
         text-transform: uppercase;
+        font-weight: bolder;
         letter-spacing: 2px;
         transition: all .25s ease-in;
         opacity: 0;
     }
     .close{
-        margin: 45px 0 0 5px;
+        margin: 35px 0 0 0px;
         position: absolute;
     }
 
@@ -237,12 +358,13 @@
         flex-direction: column;
         /* justify-content: center;
         align-items: center; */
-        height: 100vh;
+        min-height: 100vh;
         font-family: "M PLUS Rounded 1c", sans-serif;
         overflow: overlay; 
         background-image: url('images/texture-background.jpg');
         background-size: 250px 250px;
         background-blend-mode: screen;
+        overflow-x: hidden;
     }
     /* Custom scrollbar for Chrome, Safari, and Opera */
     *::-webkit-scrollbar {
@@ -262,136 +384,27 @@
         background-color: rgba(0, 0, 0, 0.4); /* Slightly darker on hover */
     }
 
-    .background-elements {
-        position: absolute; /* Posiciona a div de fundo de forma absoluta */
-        top: 0;
-        left: 0;
-        width: auto;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-    }
-
-    #wave-bottom{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        display: flex;
-        flex-direction: column-reverse;
-        background-image: url('images/bottom-wave.png');
-        background-size: auto min(100%, 45vh);
-        background-position: bottom;
-        background-repeat: repeat-x;
-        height: 45vh;
-        width: 100%;
-    }
-
-    
-
-    #flower-top {
-        width: 100%;
-        /* background-color: red; */
-        min-height: 50px;
-        background-repeat: repeat-x;
-        background-size: contain;
-        background-image: url("images/Borda_Plantinhas.png");
-        background-blend-mode: multiply;
-    }
-
-    #container-middle{
-        width: 100%;
-        background: linear-gradient(to bottom, transparent 70%, lightblue 100%);
-        flex-grow: 1;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    
-    #container-contents{
-        /* background-color: green; */
-        flex-grow: 1;
-        padding: 40px 30px;
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
-        margin-bottom: 150px;
-    }
-    
-    #fill-left{
-        display: grid;
-        grid-template-rows: 1fr 1fr 1fr 0.25fr;
-        flex-direction: column;
-        justify-content: start;
-        min-width: 15%;
-        max-width: 15%;
-        height: 100%;
-        padding-top:40px;
-    }
-
-    #fill-left-cont2{
-        padding: 0px 10px 0px 0px;
-        flex-grow: .3; 
-        display: flex;
-    }
-    #fill-left-cont1, #fill-left-cont3{
-        padding: 100px 0px 100px 0px; 
-        flex-grow: .3; 
-        display: flex;
-    }
-
-    #fill-left-cont-bottom{
-        flex-grow: .15; 
-        display: flex;
-        visibility: hidden;
-        height: 150px;
-    }
-
-    #fill-right{
-        display: grid;
-        grid-template-rows: 1fr 1fr 1fr 0.25fr;
-        flex-direction: column;
-        justify-content: end;
-        min-width: 15%;
-        max-width: 15%;
-        height: 100%;
-        padding-top:40px;
-    }
-
-    #fill-right-cont2{
-        padding: 0px 0px 0px 10px;
-        flex-grow: .3; 
-        display: flex;
-    }
-    #fill-right-cont1, #fill-right-cont3{
-        padding: 100px 0px 100px 0px; 
-        flex-grow: .3; 
-        display: flex;
-    }
-
-    #fill-right-cont-bottom{
-        flex-grow: .15; 
-        display: flex;
-        visibility: hidden;
-        height: 150px;
-    }
-
-    #container-buttons{
-        display: flex;
-        flex-wrap: wrap; /* Enables wrapping to the next line when necessary */
-        margin-top: 55px;
-    }
 
     .container-card{
         position: fixed;
-        top: 0;
+        top: 0px;
         left: 50%;
         transform: translate(-50%) !important;
         background-color: transparent;
-        max-width: 80vw;
+        max-width: min(calc(90vw), 750px);
         overflow-y: scroll;
         padding-top: 5px !important;
         max-height: 100vh;
         min-height: fit-content;
+        height: fit-content;
+        transition: opacity .5s ease-in-out, visibility .5s .5s;  /* Smooth fade effect */
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .container-card.show {
+        opacity: 1;
+        visibility: visible;
     }
 
     .card-wide{
@@ -401,16 +414,9 @@
         display: none;
     }
 
-    #img-button:hover{
-        filter:grayscale(1);
-    }
-    
     @media (max-width: 1200px) {
-        #fill-left, #fill-right{
-            display: none;
-        }
         .container-card{
-            padding-top:50px;
+            padding-top:50px !important;
         }
 
         .card-wide{
@@ -421,9 +427,6 @@
         }
     }
     @media (max-width: 590px) {
-        #text1, #text2{
-            font-size: 15px !important;
-        }
         .container-card{
             max-width: 90vw;
         }
@@ -434,4 +437,39 @@
     AOS.init({
     duration: 1200,
     })
+</script>
+
+<script>
+    // Função que verifica se a classe 'show' está presente em algum dos elementos A, B ou C
+    function checkClassAndToggleDiv() {
+        const elementA = document.getElementById('offcanvasPronomesPessoais');
+        const elementB = document.getElementById('offcanvasPronomesPossessivos');
+        const elementC = document.getElementById('offcanvasPronomesIndefinidos');
+        const elementD = document.getElementById('offcanvasPronomesDemonstrativos');
+        const divX = document.getElementById('elements-container');
+
+        // Verifica se algum dos elementos A, B ou C tem a classe 'show'
+        if (elementA.classList.contains('show') || elementB.classList.contains('show') || elementC.classList.contains('show') || elementD.classList.contains('show')) {
+            divX.classList.remove('visible');  // Se "show" existir, esconde a div X
+        } else {
+            divX.classList.add('visible'); // Caso contrário, mostra a div X
+        }
+    }
+
+    // Configuração do MutationObserver
+    const observer = new MutationObserver(() => {
+        checkClassAndToggleDiv();  // Sempre que uma mudança for detectada, verificamos a visibilidade da div
+    });
+
+    // Opções para o MutationObserver
+    const config = { attributes: true, childList: false, subtree: false };
+
+    // Começamos a observar os elementos A, B, C
+    observer.observe(document.getElementById('offcanvasPronomesPessoais'), config);
+    observer.observe(document.getElementById('offcanvasPronomesPossessivos'), config);
+    observer.observe(document.getElementById('offcanvasPronomesIndefinidos'), config);
+    observer.observe(document.getElementById('offcanvasPronomesDemonstrativos'), config);
+
+    // Verifica inicialmente o estado da página
+    checkClassAndToggleDiv();
 </script>
