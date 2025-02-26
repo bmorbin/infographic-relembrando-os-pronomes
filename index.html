@@ -358,7 +358,7 @@
         flex-direction: column;
         /* justify-content: center;
         align-items: center; */
-        min-height: 100vh;
+        min-height: 100dvh;
         font-family: "M PLUS Rounded 1c", sans-serif;
         overflow: overlay; 
         background-image: url('images/texture-background.jpg');
@@ -392,9 +392,11 @@
         transform: translate(-50%) !important;
         background-color: transparent;
         max-width: min(calc(90vw), 750px);
-        overflow-y: scroll;
+        overflow-y: scroll !important;
+        overscroll-behavior: contain;
         padding-top: 5px !important;
-        max-height: 100vh;
+        padding-bottom: 5px !important;
+        max-height: 100dvh;
         min-height: fit-content;
         height: fit-content;
         transition: opacity .5s ease-in-out, visibility .5s .5s;  /* Smooth fade effect */
@@ -414,9 +416,14 @@
         display: none;
     }
 
+    .offcanvas {
+        overscroll-behavior: contain;
+    }
+
     @media (max-width: 1200px) {
         .container-card{
             padding-top:50px !important;
+            padding-bottom:50px !important;
         }
 
         .card-wide{
